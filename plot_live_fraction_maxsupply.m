@@ -14,7 +14,7 @@ close all
 CONFINED = [1==0 1==1];
 mkr = {'+';'*';'o'}; % marker types
 col = [[0 0.7 0];[0 0 0.8];[0 0 0.8]]; % colors
-EXPORT = 1==0;
+EXPORT = 1==1;
 
 Da_num = {[3:0.2:4.2 5 6];[2:2:20 30:10:60]};
 for i = 1:numel(Da_num)
@@ -63,7 +63,7 @@ hold on;grid on;
 set(gca,'fontsize',14,'fontname','times');
 xlabel('Da')
 xlim([min(Da_num{1}) max(Da_num{1})])
-ylabel('$\Phi_L^\infty$','Interpreter','latex')
+ylabel('$\Phi_{L,\infty}$','Interpreter','latex')
 ylim([0.75 1])
 for h = 1:2
     scatter(Da_num{1},phi_L{1}(h,:),40,col(h,:),mkr{h},'linew',1.5)
@@ -77,7 +77,7 @@ hold on;grid on;
 set(gca,'fontsize',14,'fontname','times');
 xlabel('Da')
 xlim([min(Da_num{2}) max(Da_num{2})])
-ylabel('$\Phi_L^\infty$','Interpreter','latex')
+ylabel('$\Phi_{L,\infty}$','Interpreter','latex')
 ylim([0.25 1])
 col_fit = [[0.8 0.8 0];[0 0.8 0.8]];
 plot(Da_x,phi_L_as,'color',col_fit(1,:),'linew',1.5);

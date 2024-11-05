@@ -11,7 +11,7 @@ clear
 close all
 
 CONFINED = [1==0 1==1];
-EXPORT = 1==0;
+EXPORT = 1==1;
 
 Da_num = [1 2 3];
 n.Da = numel(Da_num);
@@ -81,7 +81,7 @@ set(gca,'xscale','log')
 xlabel('${\rm S_d}(1-{\rm Da}/{\rm Da}_{\infty})$','Interpreter','latex')
 xlim([min(x_Phi) max(x_Phi)])
 xticks([1e-1 1 1e1 1e2])
-ylabel('$\Phi_L^0$','Interpreter','latex')
+ylabel('$\Phi_{L,0}$','Interpreter','latex')
 ylim([0 1])
 xl = get(gca,'XLim');
 fill([1 xl(end) xl(end) 1],[0 0 1 1],col_live,'edgecolor','none','FaceAlpha',0.1,'HandleVisibility','off');
@@ -108,7 +108,7 @@ set(gca,'xscale','log')
 xlabel('${\rm S_d}(1-{\rm Da}/{\rm Da}_{\infty})$','Interpreter','latex')
 xlim([min(x_Phi) max(x_Phi)])
 xticks([1e-1 1 1e1 1e2])
-ylabel('$\Phi_L^0$','Interpreter','latex')
+ylabel('$\Phi_{L,0}$','Interpreter','latex')
 ylim([0 1])
 xl = get(gca,'XLim');
 fill([1 xl(end) xl(end) 1],[0 0 1 1],col_live,'edgecolor','none','FaceAlpha',0.1,'HandleVisibility','off');
@@ -128,5 +128,5 @@ annotation('textbox',[.51 .86 .1 .1],'string',labels{2},'FontSize',16,'FontName'
 
 %% export
 if EXPORT
-    exportgraphics(gcf,'C:\Users\Willy\Work\Manuscripts\Rigid_paper\fig_phi_L_0_lowDa_bothconf.png','Resolution',300);
+    exportgraphics(gcf,'Figures\live_fraction_static_lowDa.png','Resolution',300);
 end

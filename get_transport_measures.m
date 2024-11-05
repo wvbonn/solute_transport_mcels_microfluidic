@@ -81,7 +81,7 @@ for h = 1:numel(CONFINED)
             % meet
             X_nec = [X_nec(1);X_nec;X_nec(end)];
             Y_nec = [-b/a;Y_nec;-b/a];
-            A_nec = sum((Y_nec(1:end-1)+b/a).*diff(-X_nec));
+            A_nec = sum((Y_nec(1:end-1)+b/a).*diff(X_nec));
             % get coordinates of necrotic core centre: divide necrotic
             % area into small rectangles, weigh the center of those
             % rectangles with their surface area

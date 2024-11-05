@@ -11,7 +11,7 @@ clear
 close all
 
 CONFINED = [1==0 1==1];
-EXPORT = 1==0;
+EXPORT = 1==1;
 
 Da_num = [4 8 20];
 n.Da = numel(Da_num);
@@ -85,16 +85,16 @@ set(gca,'xscale','log')
 xlabel('${\rm R_d}\,{\rm S_d}$','Interpreter','latex')
 xlim([min(x_Phi) max(x_Phi)])
 xticks([1e-2 1 1e2])
-ylabel('$\Phi_L^0/\Phi_L^\infty$','Interpreter','latex')
+ylabel('$\Phi_{L,0}/\Phi_{L,\infty}$','Interpreter','latex')
 ylim([0 1])
 scatter(x_Phi,phi_L,40,...
         [reshape(col.r(1,:,:),[],1) reshape(col.g(1,:,:),[],1) reshape(col.b(1,:,:),[],1)],...
         'x','linew',1.5,'handlevisibility','off');
+plot(x_cont,-x_cont.^-0.5+(1+x_cont.^-1).^0.5,'lines','--','color','k','displayname','analytical');
 for i = 1:n.Da
-    scatter(-1,-1,30,[col.r(1,i,1) col.g(1,i,1) col.b(1,i,1)],'x','linew',1.5,'displayname',['${\rm Da} = $ ' Da_str{i}]);
+    scatter(-1,-1,30,[col.r(1,i,1) col.g(1,i,1) col.b(1,i,1)],'x','linew',1.5,'displayname',['${\rm Da} = $ ' Da_str{i} ' (s.)']);
 end
-plot(x_cont,-x_cont.^-0.5+(1+x_cont.^-1).^0.5,'lines','--','color','k','handlevisibility','off');
-legend('fontsize',12,'fontname','times','location','southeast','NumColumns',1,'Interpreter','latex');
+legend('fontsize',11,'location','southeast','NumColumns',1,'Interpreter','latex');
 annotation('textbox',[.06 .86 .1 .1],'string',labels{1},'FontSize',16,'FontName','times','FontWeight','bold',...
     'verticalalignment','bottom','edgecolor','none');
 
@@ -110,16 +110,16 @@ set(gca,'xscale','log')
 xlabel('${\rm R_d}\,{\rm S_d}$','Interpreter','latex')
 xlim([min(x_Phi) max(x_Phi)])
 xticks([1e-2 1 1e2])
-ylabel('$\Phi_L^0/\Phi_L^\infty$','Interpreter','latex')
+ylabel('$\Phi_{L,0}/\Phi_{L,\infty}$','Interpreter','latex')
 ylim([0 1])
 scatter(x_Phi,phi_L,40,...
         [reshape(col.r(2,:,:),[],1) reshape(col.g(2,:,:),[],1) reshape(col.b(2,:,:),[],1)],...
         'x','linew',1.5,'handlevisibility','off');
+plot(x_cont,-x_cont.^-0.5+(1+x_cont.^-1).^0.5,'lines','--','color','k','displayname','analytical');
 for i = 1:n.Da
-    scatter(-1,-1,30,[col.r(2,i,1) col.g(2,i,1) col.b(2,i,1)],'x','linew',1.5,'displayname',['${\rm Da} = $ ' Da_str{i}]);
+    scatter(-1,-1,30,[col.r(2,i,1) col.g(2,i,1) col.b(2,i,1)],'x','linew',1.5,'displayname',['${\rm Da} = $ ' Da_str{i} ' (s.)']);
 end
-plot(x_cont,-x_cont.^-0.5+(1+x_cont.^-1).^0.5,'lines','--','color','k','handlevisibility','off');
-legend('fontsize',12,'fontname','times','location','southeast','NumColumns',1,'Interpreter','latex');
+legend('fontsize',11,'fontname','times','location','southeast','NumColumns',1,'Interpreter','latex');
 annotation('textbox',[.51 .86 .1 .1],'string',labels{2},'FontSize',16,'FontName','times','FontWeight','bold',...
     'verticalalignment','bottom','edgecolor','none');
 

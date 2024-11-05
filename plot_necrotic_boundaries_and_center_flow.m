@@ -1,7 +1,7 @@
 clear
 close all
 
-EXPORT = 1==0;
+EXPORT = 1==1;
 
 Da_num = 5;
 Da_str = num2str(Da_num);
@@ -92,7 +92,7 @@ for k = 1:n.Pe
     Phi_L(k) = phi_l;
 end
 % necrotic boundaries, unconfined
-plot_necrotic_boundaries(3*21+10,[6 9],X_i,Y_i,G_nec_x,G_nec_y,Pe_str,1==0,param);
+plot_necrotic_boundaries(3*21+10,[6 9],X_i,Y_i,G_nec_x,G_nec_y,Pe_str,1==1,param);
 % necrotic centre trajectory
 plot(x_nec_c,y_nec_c,'linew',1,'color','k');
 for k = 1:n.Pe
@@ -102,7 +102,7 @@ annotation('textbox',[.445 .53 .1 .1],'string',labels{3},'FontSize',16,'FontName
     'verticalalignment','bottom','edgecolor','none');
 
 % necrotic boundaries caption
-annotation('textbox',[.83 .56 .1 .1],'string','$\Gamma_n\,(c_n = K_{1/2})$',...
+annotation('textbox',[.83 .56 .1 .1],'string','$\Gamma_n\,(c_n = 10^{-3}\,c_0)$',...
     'fontsize',15,'Interpreter','latex','FitBoxToText','on','EdgeColor','none','VerticalAlignment','top','HorizontalAlignment','right');
 annotation('line',[.82 .92],.58*[1 1]);
 for k = 1:n.Pe

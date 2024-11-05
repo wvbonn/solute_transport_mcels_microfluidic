@@ -140,7 +140,7 @@ for i = 1:n.Da
     scatter(-1,-1,30,0.4*[1 1 1],mkr{i},'linew',1.5,'displayname',['Da = ' Da_str{i}]);
 end
 for j = 1:n.Rd
-    scatter(-1,-1,30,[col.r(1,1,j,1) col.g(1,1,j,1) col.b(1,1,j,1)],'square','filled','displayname',['${\rm R_d} = $ ' Rd_str{j}]);
+    scatter(-1,-1,30,[col.r(2,1,j,1) col.g(2,1,j,1) col.b(2,1,j,1)],'square','filled','displayname',['${\rm R_d} = $ ' Rd_str{j}]);
 end
 xl = get(gca,'XLim');
 fill([100 xl(end) xl(end) 100],[0 0 1 1],col_live,'edgecolor','none','FaceAlpha',0.1,'HandleVisibility','off');

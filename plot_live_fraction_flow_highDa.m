@@ -80,7 +80,6 @@ for h = 1:numel(CONFINED)
 
 end
 
-
 %% plotting
 
 figure('position',[400 50 800 400],'color','w');
@@ -101,7 +100,7 @@ title(['${\rm Da}^{1/2}\,{\rm S_c}>' num2str(tr(1)) '$'],'Interpreter','latex');
 xlabel('${\rm R_d}\,{\rm S_d}\,{\rm S_c}$','Interpreter','latex')
 xlim([min(x_Phi(S_ch>tr(1))) max(x_Phi(S_ch>tr(1)))])
 xticks([1 1e2 1e4])
-ylabel('$\Phi_L/\Phi_L^{\infty}$','Interpreter','latex')
+ylabel('$\Phi_L/\Phi_{L,\infty}$','Interpreter','latex')
 ylim([0 1])
 for i = 1:n.Da
     id = intersect(find(S_ch>tr(1)),find(Da_cub==Da_num(i)));
@@ -131,7 +130,7 @@ title(['${\rm Da}^{1/2}\,{\rm S_c}>' num2str(tr(2)) '$'],'Interpreter','latex');
 xlabel('${\rm R_d}\,{\rm S_d}\,{\rm S_c}$','Interpreter','latex')
 xlim([min(x_Phi(S_ch>tr(2))) max(x_Phi(S_ch>tr(2)))])
 xticks([1 1e2 1e4])
-ylabel('$\Phi_L/\Phi_L^\infty$','Interpreter','latex')
+ylabel('$\Phi_L/\Phi_{L,\infty}$','Interpreter','latex')
 ylim([0 1])
 for i = 1:n.Da
     id = intersect(find(S_ch>tr(1)),find(Da_cub==Da_num(i)));
@@ -139,7 +138,7 @@ for i = 1:n.Da
     scatter(-1,-1,30,0.4*[1 1 1],mkr{i},'linew',1.5,'displayname',['Da = ' Da_str{i}]);
 end
 for j = 1:n.Rd
-    scatter(-1,-1,30,[col.r(1,1,j,1) col.g(1,1,j,1) col.b(1,1,j,1)],'square','filled','displayname',['${\rm R_d} = $ ' Rd_str{j}]);
+    scatter(-1,-1,30,[col.r(2,1,j,1) col.g(2,1,j,1) col.b(2,1,j,1)],'square','filled','displayname',['${\rm R_d} = $ ' Rd_str{j}]);
 end
 legend('fontsize',12,'fontname','times','location','southeast','NumColumns',1,'Interpreter','latex');
 annotation('textbox',[.51 .86 .1 .1],'string',labels{2},'FontSize',16,'FontName','times','FontWeight','bold',...
